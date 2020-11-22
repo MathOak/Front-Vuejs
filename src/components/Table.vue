@@ -155,7 +155,7 @@
                         </span>
                         <v-icon
                         small
-                        @click="seen = !seen"
+                        @click="showOption()"
                         >
                         mdi-dots-horizontal
                         </v-icon>
@@ -225,9 +225,10 @@ export default {
     },
                 methods:{
                 showOption(item){
-                    let x = document.getElementById("crud");
                     console.log(item);
-                    x.style.display = "block";
+                    console.log(this.desserts.indexOf(item))
+                    console.log(this.editedItem = Object.assign({}, item));
+                    this.seen = !this.seen;
                 },
                 editItem (item) {
                     this.editedIndex = this.desserts.indexOf(item)
